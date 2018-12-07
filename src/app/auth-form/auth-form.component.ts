@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, ContentChild, AfterContentInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ContentChildren, QueryList, AfterContentInit } from '@angular/core';
 
 import { AuthRememberComponent } from './auth-remember/auth-remember.component';
 
@@ -13,7 +13,7 @@ export class AuthFormComponent implements OnInit, AfterContentInit {
 
   showMessage: boolean;
 
-  @ContentChild(AuthRememberComponent) remember: AuthRememberComponent;
+  @ContentChildren(AuthRememberComponent) remember: QueryList<AuthRememberComponent>;
 
   @Output() submitted: EventEmitter<User> = new EventEmitter<User>();
 
