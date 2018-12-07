@@ -40,6 +40,10 @@ export class AuthFormComponent implements OnInit, AfterContentInit, AfterViewIni
   }
 
   ngAfterContentInit() {
+    if (this.message) {
+      this.message.days = 10;
+    }
+
     if (this.remember) {
       this.remember.forEach((item) => {
         item.checked.subscribe((checked: boolean) => this.showMessage = checked);
@@ -48,10 +52,10 @@ export class AuthFormComponent implements OnInit, AfterContentInit, AfterViewIni
   }
 
   ngAfterViewInit() {
-    if (this.message) {
-      console.log(this.message);
-      this.message.days = 10;
-    }
+    // if (this.message) {
+    //   console.log(this.message);
+    //   this.message.days = 10;
+    // }
   }
 
 }
