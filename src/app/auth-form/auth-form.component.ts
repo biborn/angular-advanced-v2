@@ -24,6 +24,8 @@ export class AuthFormComponent implements OnInit, AfterContentInit, AfterViewIni
 
   showMessage: boolean;
 
+  @ViewChild(AuthMessageComponent) message: AuthMessageComponent;
+
   @ContentChildren(AuthRememberComponent) remember: QueryList<AuthRememberComponent>;
 
   @Output() submitted: EventEmitter<User> = new EventEmitter<User>();
