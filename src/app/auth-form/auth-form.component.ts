@@ -11,6 +11,10 @@ import { User } from './auth-form.interface';
 })
 export class AuthFormComponent implements OnInit, AfterContentInit {
 
+  showMessage: boolean;
+
+  @ContentChild(AuthRememberComponent) remember: AuthRememberComponent;
+
   @Output() submitted: EventEmitter<User> = new EventEmitter<User>();
 
   constructor() { }
