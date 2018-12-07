@@ -26,4 +26,8 @@ export class AuthFormComponent implements OnInit, AfterContentInit {
     this.submitted.emit(value);
   }
 
+  ngAfterContentInit() {
+    console.log(this.remember);
+  }
+
 }
