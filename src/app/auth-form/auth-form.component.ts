@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { AuthRememberComponent } from './auth-remember/auth-remember.component';
 import { User } from './auth-form.interface';
 
 @Component({
