@@ -1,4 +1,14 @@
-import { Component, OnInit, Output, EventEmitter, ContentChildren, QueryList, AfterContentInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+  ContentChildren,
+  QueryList,
+  AfterContentInit,
+  ViewChild,
+  AfterViewInit,
+} from '@angular/core';
 
 import { AuthRememberComponent } from './auth-remember/auth-remember.component';
 import { AuthMessageComponent } from './auth-message/auth-message.component';
@@ -10,7 +20,7 @@ import { User } from './auth-form.interface';
   templateUrl: './auth-form.component.html',
   styleUrls: ['./auth-form.component.scss']
 })
-export class AuthFormComponent implements OnInit, AfterContentInit {
+export class AuthFormComponent implements OnInit, AfterContentInit, AfterViewInit {
 
   showMessage: boolean;
 
@@ -33,6 +43,9 @@ export class AuthFormComponent implements OnInit, AfterContentInit {
         item.checked.subscribe((checked: boolean) => this.showMessage = checked);
       });
     }
+  }
+
+  ngAfterViewInit() {
   }
 
 }
