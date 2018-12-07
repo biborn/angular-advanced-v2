@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter, ContentChildren, QueryList, AfterContentInit } from '@angular/core';
 
 import { AuthRememberComponent } from './auth-remember/auth-remember.component';
+import { AuthMessageComponent } from './auth-message/auth-message.component';
 
 import { User } from './auth-form.interface';
 
