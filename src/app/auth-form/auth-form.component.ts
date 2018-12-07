@@ -28,11 +28,9 @@ export class AuthFormComponent implements OnInit, AfterContentInit {
 
   ngAfterContentInit() {
     if (this.remember) {
-      // console.log(this.remember);
       this.remember.forEach((item) => {
         item.checked.subscribe((checked: boolean) => this.showMessage = checked);
       });
-      // this.remember.checked.subscribe((checked: boolean) => this.showMessage = checked);
     }
   }
 
