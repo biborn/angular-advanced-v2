@@ -48,6 +48,10 @@ export class AuthFormComponent implements OnInit, AfterContentInit, AfterViewIni
   }
 
   ngAfterViewInit() {
+    if (this.message) {
+      console.log(this.message);
+      this.message.days = 10;
+    }
   }
 
 }
