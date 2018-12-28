@@ -6,7 +6,7 @@ import {
   ContentChildren,
   QueryList,
   AfterContentInit,
-  ViewChild,
+  ViewChildren,
   AfterViewInit,
 } from '@angular/core';
 
@@ -24,7 +24,7 @@ export class AuthFormComponent implements OnInit, AfterContentInit, AfterViewIni
 
   showMessage: boolean;
 
-  @ViewChild(AuthMessageComponent) message: AuthMessageComponent;
+  @ViewChildren(AuthMessageComponent) message: QueryList<AuthMessageComponent>;
 
   @ContentChildren(AuthRememberComponent) remember: QueryList<AuthRememberComponent>;
 
