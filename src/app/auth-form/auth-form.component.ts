@@ -52,7 +52,9 @@ export class AuthFormComponent implements OnInit, AfterContentInit, AfterViewIni
   }
 
   ngAfterViewInit() {
-    console.log(this.email);
+    this.email.nativeElement.setAttribute('placeholder', 'Enter your email');
+    this.email.nativeElement.classList.add('email');
+    this.email.nativeElement.focus();
 
     if (this.message) {
       this.message.forEach((message) => {
