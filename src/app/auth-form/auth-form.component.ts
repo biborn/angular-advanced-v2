@@ -10,6 +10,7 @@ import {
   AfterViewInit,
   ViewChild,
   ElementRef,
+  Renderer2,
 } from '@angular/core';
 
 import { AuthRememberComponent } from './auth-remember/auth-remember.component';
@@ -34,7 +35,7 @@ export class AuthFormComponent implements OnInit, AfterContentInit, AfterViewIni
 
   @Output() submitted: EventEmitter<User> = new EventEmitter<User>();
 
-  constructor() { }
+  constructor(private renderer: Renderer2) { }
 
   ngOnInit() {
   }
@@ -52,9 +53,12 @@ export class AuthFormComponent implements OnInit, AfterContentInit, AfterViewIni
   }
 
   ngAfterViewInit() {
-    this.email.nativeElement.setAttribute('placeholder', 'Enter your email');
-    this.email.nativeElement.classList.add('email');
+    this.renderer.setAttribute(this.email.nativeElement, 'placeholder', 'Enter your email');
+    this.renderer.addClass(this.email.nativeElement, 'email');
     this.email.nativeElement.focus();
+    // this.email.nativeElement.setAttribute('placeholder', 'Enter your email');
+    // this.email.nativeElement.classList.add('email');
+    // this.email.nativeElement.focus();
 
     if (this.message) {
       this.message.forEach((message) => {
