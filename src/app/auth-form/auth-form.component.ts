@@ -7,6 +7,7 @@ import { User } from './auth-form.interface';
   styleUrls: ['./auth-form.component.scss']
 })
 export class AuthFormComponent implements OnInit {
+  title: string = 'Login';
 
   @Output() submitted: EventEmitter<User> = new EventEmitter<User>();
 
