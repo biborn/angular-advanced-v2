@@ -12,6 +12,9 @@ import { AuthFormComponent } from './auth-form.component';
   ],
   exports: [
     AuthFormComponent,
-  ]
+  ],
+  entryComponents: [
+    AuthFormComponent,
+  ],
 })
 export class AuthFormModule { }
